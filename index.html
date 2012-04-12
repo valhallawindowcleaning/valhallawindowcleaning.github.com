@@ -27,21 +27,30 @@
     </script>
   </head>
 
-  <body data-spy="scroll" data-target=".subnav" data-offset="50">
-  
-    <div class="container">
+  <body>
 
-      <header>
-        <h1>Valhalla Windowcleaning Ltd.</h1>
-      </header>
+    <header id="top" class="container">
+      <h1 class="hide-text">Valhalla Windowcleaning Ltd.</h1>
+    </header>
+    <div class="container main">
+      <div class="row-fluid">
 
-      <div class="row">
-        <div class="span6 offset3">
-
-          <h2>Contact</h2>
-          <div class="vcard">
-            Telephone: <a href="tel:+1-250-497-7810"><span class="tel">250-497-7810</span></a><br />
-            Or use the contact form below.
+          <p>
+            Valhalla Windowcleaning is fully licensed and insured through <b>WorkSafeBC</b>, and offers window cleaning services in the Okanagan:
+          </p>
+          <div class="row-fluid">
+            <div class="span9">
+              <ul>
+                <li>High-rise Buildings (residential and commercial)</li>
+                <li>Residential</li>
+                <li>Pressure Washing</li>
+                <li>Gutters</li>
+                <li><em>Free Estimates</em></li>
+              </ul>
+            </div>
+            <div class="span3">
+              <img src="img/toon.png" alt="Valhalla Window Cleaning" class="pull-right"/>
+            </div>
           </div>
 
           <h2>About</h2>
@@ -49,30 +58,34 @@
             Valhalla Windowcleaning is owned and operated by Erik Kabos, and has been serving the Okanagan for over 20 years.
           </p>
 
-          <h2>Services</h2>
-          <p>
-            Valhalla Windowcleaning is fully licensed and insured, and offers window cleaning services in the Okanagan:
-          </p>
-          <ul>
-            <li>High-rise Buildings</li>
-            <li>Residential</li>
-            <li>Pressure Washing</li>
-          </ul>
 
+          <h2>Contact</h2>
+          <div class="vcard">
+            Cell: <a href="tel:+250-496-5425"><span class="tel">250-496-5425</span></a><br />
+            Office: <a href="tel:+250-497-7810"><span class="tel">250-497-7810</span></a><br />
+              Or use the <a href="#contact-form">contact form</a> below
+          </div>
 
-          <div class="well">
+          <br>
+
+          <div class="well" id="contact-form">
             <div id="wufoo-z7x3x5">
               Fill out my <a href="http://valhallawindowcleaning.wufoo.com/forms/z7x3x5">online form</a>.
             </div>
           </div>
         </div>
-      </div>
-    <hr />
-    <footer>
-      Site built with <a href="http://getbootstrap.com">Bootstrap</a>
-      and hosted on <a href="http://github.com">Github</a>
-    </footer>
+      <footer>
+        Site built with <a href="http://getbootstrap.com">Bootstrap</a>
+        and hosted on <a href="http://github.com">Github</a>
+      </footer>
     </div>
+    <div class="scroll-button hidden-phone">
+      <a href="#bottom" class="btn btn-info scrolldown ">See fullsize image</a>
+    </div>
+    <div id="bottom">
+      <a href="#top" class="btn btn-info" id="btt">Back to top</a>
+    </div>
+    <div id="whitespace"></div>
 
     <script type="text/javascript">var z7x3x5;(function(d, t) {
     var s = d.createElement(t), options = {
@@ -88,5 +101,29 @@
     try { z7x3x5 = new WufooForm();z7x3x5.initialize(options);z7x3x5.display(); } catch (e) {}};
     var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
     })(document, 'script');</script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      function animatedScroll() {
+        var elementClicked = $(this).attr("href");
+        var destination = $(elementClicked).offset().top;
+        $("html:not(:animated),body:not(:animated)").animate({ 
+          scrollTop: destination
+        }, 500 );
+        return false;
+      }
+
+      $('#btt').click(animatedScroll);
+      $('.scrolldown').click(animatedScroll);
+      $('.scrolldown').click(function(){ 
+        $('#btt').show();
+      });
+
+      function setWhitespace(){
+        $('#whitespace').css('height', $(window).height() + 'px');
+      }
+      $(window).resize(setWhitespace);
+      setWhitespace();
+
+    </script>
   </body>
 </html>
