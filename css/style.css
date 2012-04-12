@@ -11,7 +11,7 @@ header {
     height: 200px;
     width: 100%;
 }
-@media (max-width: 550px) {
+@media (max-width: 768px) {
     header { 
         background: white url(../img/logo-320.png) no-repeat center;
         padding-top: 0px;
@@ -29,7 +29,6 @@ header h1 {
 }
 .main {
     background-color: white;
-    /*background-color: rgba(255, 255, 255, 0.9);*/
 }
 #bottom {
     margin-top: 5px;
@@ -45,14 +44,14 @@ footer a {
 }
 
 body { 
-    background-image: url(../img/bg-480.jpg);
+    background: white;
     background-size: 100%;
     background-attachment: fixed;
 }
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 480px) {
     body { background-image: url(../img/bg-768.jpg); }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1280px) and (min-width: 769px) {
     body { background-image: url(../img/bg-1280.jpg); }
 }
 @media (min-width: 1281px) {
