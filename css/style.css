@@ -76,8 +76,6 @@ em {
 }
 .whitespace {
     height: 1000px;
-    display: block;
-    float: none;
 }
 .scroll-button {
     float:left; 
